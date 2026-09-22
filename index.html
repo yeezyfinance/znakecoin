@@ -4,9 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZNAKE — Znakeoin</title>
-  <meta name="description" content="Znakeoin ($ZNAKE) — a gold-hued snake token paired with ZEC. Holders receive ZEC once bonded." />
+  <meta name="description" content="Znakeoin ($ZNAKE) on Solana. Official CA: 2MEUjtAynFAKroo9hkHwBL8LpMmxpJrAYXucZYZ3pump. Swap on Jupiter. Holders receive ZEC once bonded." />
   <link rel="icon" href="snake.jpg" type="image/jpeg" />
   <link rel="stylesheet" href="style.css" />
+  <script src="https://plugin.jup.ag/plugin-v1.js" data-preload defer></script>
 </head>
 <body>
   <div class="grain"></div>
@@ -18,6 +19,7 @@
     <nav>
       <a href="#about">About</a>
       <a href="#token">Token</a>
+      <a href="#buy">Trade</a>
       <a href="#holders">ZEC Drop</a>
       <a href="https://t.me/znakeoin" target="_blank" rel="noopener">Telegram</a>
     </nav>
@@ -27,21 +29,27 @@
   <main id="top">
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">Paired with ZEC · Privacy-native</p>
+        <p class="eyebrow">Solana · Paired toward ZEC</p>
         <h1>The snake that pays in Zcash.</h1>
         <p class="lede">
-          Znakeoin is a gold-and-shadow token built to bond, then send
-          <strong>ZEC</strong> to holders. Quiet money. Loud mark.
+          Znakeoin is a gold-and-shadow token. Trade it here on Jupiter.
+          After bond, the plan is to send <strong>ZEC</strong> to holders.
         </p>
+
         <div class="cta-row">
-          <a class="btn btn-primary" href="#buy">Buy $ZNAKE</a>
+          <a class="btn btn-primary" href="#buy">Trade on Jupiter</a>
           <a class="btn btn-ghost" href="https://t.me/znakeoin" target="_blank" rel="noopener">Join Telegram</a>
         </div>
-        <p class="fine">Domain: znakeoin.com · GitHub: yeezyfinance</p>
       </div>
       <div class="hero-art">
         <img src="snake.jpg" alt="White snake on gold" />
       </div>
+    </section>
+
+    <section id="ca" class="ca-billboard" role="button" tabindex="0" aria-label="Copy contract address">
+      <p class="ca-kicker">Official contract · tap to copy</p>
+      <p id="ca-text" class="ca-giant">2MEUjtAynFAKroo9hkHwBL8LpMmxpJrAYXucZYZ3pump</p>
+      <p class="ca-hint" id="copy-hint">Click the address to copy</p>
     </section>
 
     <section id="about" class="panel">
@@ -52,12 +60,12 @@
           <p>A single mark. A light field. Near-black actions. No carnival UI — just the coil and the pair.</p>
         </article>
         <article>
-          <h3>Paired with ZEC</h3>
-          <p>$ZNAKE trades against Zcash. Privacy stack on one side of the book, snake on the other.</p>
+          <h3>On Solana, headed to ZEC</h3>
+          <p>$ZNAKE lives on Solana today. The plan after bond is ZEC to holders — privacy stack on the other side of the book.</p>
         </article>
         <article>
-          <h3>Holders get ZEC</h3>
-          <p>Once the curve bonds, ZEC is sent to holders. That’s the plan. Stay in Telegram for the drop window.</p>
+          <h3>Trade in place</h3>
+          <p>Connect Phantom, Backpack, or Solflare in the Jupiter widget below. No extra tab required.</p>
         </article>
       </div>
     </section>
@@ -68,19 +76,33 @@
         <ul class="spec">
           <li><span>Ticker</span><b>$ZNAKE</b></li>
           <li><span>Name</span><b>Znakeoin</b></li>
-          <li><span>Pair</span><b>ZNAKE / ZEC</b></li>
-          <li><span>Network</span><b>To be posted at bond</b></li>
+          <li><span>Chain</span><b>Solana</b></li>
+          <li><span>Mint</span><b>pump.fun</b></li>
           <li><span>Community</span><b>t.me/znakeoin</b></li>
         </ul>
       </div>
       <div class="note">
-        <p>
-          Contract address and chart go here the moment they exist.
-          Until then this page is the official mark and the only domain:
-          <strong>znakeoin.com</strong>
+        <p class="ca-label">Same CA — tap to copy</p>
+        <p class="ca-giant ca-giant-sm" data-ca>2MEUjtAynFAKroo9hkHwBL8LpMmxpJrAYXucZYZ3pump</p>
+        <p class="links-inline">
+          <a href="https://jup.ag/swap/SOL-2MEUjtAynFAKroo9hkHwBL8LpMmxpJrAYXucZYZ3pump" target="_blank" rel="noopener">jup.ag</a>
+          ·
+          <a href="https://solscan.io/token/2MEUjtAynFAKroo9hkHwBL8LpMmxpJrAYXucZYZ3pump" target="_blank" rel="noopener">Solscan</a>
+          ·
+          <a href="https://dexscreener.com/solana/2MEUjtAynFAKroo9hkHwBL8LpMmxpJrAYXucZYZ3pump" target="_blank" rel="noopener">DexScreener</a>
         </p>
         <p class="warn">Never send funds to an address posted outside Telegram or this site.</p>
       </div>
+    </section>
+
+    <section id="buy" class="panel">
+      <h2>Trade $ZNAKE</h2>
+      <p class="lede short">Connect a Solana wallet in the Jupiter widget. Output is locked to the official mint.</p>
+      <div id="jupiter-plugin" class="jup-frame"></div>
+      <p class="fine jup-fallback">
+        Widget not loading?
+        <a href="https://jup.ag/swap/SOL-2MEUjtAynFAKroo9hkHwBL8LpMmxpJrAYXucZYZ3pump" target="_blank" rel="noopener">Open Jupiter in a new tab</a>
+      </p>
     </section>
 
     <section id="holders" class="panel gold-band">
@@ -88,7 +110,7 @@
       <ol class="steps">
         <li>
           <strong>Bond</strong>
-          <span>Curve completes. Liquidity locks. The pair is live against ZEC.</span>
+          <span>Curve completes. Liquidity locks. Next pair target is ZEC.</span>
         </li>
         <li>
           <strong>Snapshot</strong>
@@ -100,21 +122,15 @@
         </li>
       </ol>
     </section>
-
-    <section id="buy" class="panel">
-      <h2>Get $ZNAKE</h2>
-      <p class="lede short">Buy route posts at launch. Use the official Telegram for the first link.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="https://t.me/znakeoin" target="_blank" rel="noopener">Open Telegram</a>
-        <a class="btn btn-ghost" href="https://github.com/yeezyfinance" target="_blank" rel="noopener">yeezyfinance on GitHub</a>
-      </div>
-    </section>
   </main>
 
   <footer>
     <img src="snake.jpg" alt="" class="foot-mark" />
-    <p>ZNAKE · Znakeoin · paired with ZEC</p>
+    <p>ZNAKE · Znakeoin · CA 2MEUjtAynFAKroo9hkHwBL8LpMmxpJrAYXucZYZ3pump</p>
     <p class="fine">Not financial advice. Tokens can go to zero. DYOR.</p>
   </footer>
+
+  <div id="toast" class="toast" hidden>Copied</div>
+  <script src="site.js"></script>
 </body>
 </html>

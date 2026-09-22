@@ -2,6 +2,8 @@
   var CA = "2MEUjtAynFAKroo9hkHwBL8LpMmxpJrAYXucZYZ3pump";
   var SOL = "So11111111111111111111111111111111111111112";
   var toast = document.getElementById("toast");
+  var hint = document.getElementById("copy-hint");
+  var board = document.getElementById("ca");
   var toastTimer;
 
   function showToast(msg) {
@@ -14,24 +16,20 @@
     }, 1600);
   }
 
-  function copyCa(btn) {
-    function done() {
-      if (btn) {
-        var prev = btn.textContent;
-        btn.textContent = "Copied";
-        btn.classList.add("copied");
-        setTimeout(function () {
-          btn.textContent = prev;
-          btn.classList.remove("copied");
-        }, 1400);
-      }
-      showToast("CA copied");
+  function copiedUI() {
+    showToast("CA copied");
+    if (hint) {
+      var prev = "Click the address to copy";
+      hint.textContent = "Copied";
+      if (board) board.classList.add("is-copied");
+      setTimeout(function () {
+        hint.textContent = prev;
+        if (board) board.classList.remove("is-copied");
+      }, 1600);
     }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(CA).then(done).catch(fallback);
-    } else {
-      fallback();
-    }
+  }
+
+  function copyCa() {
     function fallback() {
       var ta = document.createElement("textarea");
       ta.value = CA;
@@ -42,23 +40,31 @@
       ta.select();
       try {
         document.execCommand("copy");
-        done();
+        copiedUI();
       } catch (e) {
-        showToast("Copy failed — select the CA");
+        showToast("Select the CA and copy");
       }
       document.body.removeChild(ta);
     }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(CA).then(copiedUI).catch(fallback);
+    } else {
+      fallback();
+    }
   }
 
-  var mainBtn = document.getElementById("copy-ca");
-  if (mainBtn) mainBtn.addEventListener("click", function () { copyCa(mainBtn); });
+  if (board) {
+    board.addEventListener("click", copyCa);
+    board.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        copyCa();
+      }
+    });
+  }
 
-  document.querySelectorAll("[data-copy]").forEach(function (btn) {
-    btn.addEventListener("click", function () { copyCa(btn); });
-  });
-
-  document.querySelectorAll(".ca-text").forEach(function (el) {
-    el.addEventListener("click", function () { copyCa(mainBtn || el); });
+  document.querySelectorAll("[data-ca]").forEach(function (el) {
+    el.addEventListener("click", copyCa);
   });
 
   function bootJupiter() {
